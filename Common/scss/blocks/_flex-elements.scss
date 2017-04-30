@@ -1,0 +1,37 @@
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2em 0;
+    justify-content: space-around;
+
+    @media #{$mq-580} {
+        justify-content: space-between;
+    }
+}
+
+.flex-cards--2{
+    margin:2rem auto;
+    @media #{$mq-640}
+    {
+        display:flex;
+        flex-grow:1;
+        flex-shrink: 1;
+        justify-content: space-around;
+    }
+
+    & section{
+        @include box-sizing();
+        max-width:400px;
+        margin:0 auto 4rem auto;
+        padding:0 .5rem;
+        & h3{
+            text-align:center;
+        }
+
+        & img{
+            max-width:100%;
+            position:relative;
+        }
+    }
+}

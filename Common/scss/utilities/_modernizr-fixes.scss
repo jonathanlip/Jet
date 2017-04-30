@@ -1,0 +1,46 @@
+﻿.no-flexbox {
+    .header-flex {
+        display: table-row;
+
+        @media #{$mq-large} {
+            display: block;
+        }
+    }
+
+    .logo {
+        display: table-cell;
+    }
+
+    .nav-launch {
+        display: table-cell;
+
+        @media #{$mq-large} {
+            display: none;
+        }
+    }
+
+    .split-width {
+        @media #{$mq-medium} {
+            display: table-row;
+        }
+    }
+
+    .contact-flex {
+        @media #{$mq-medium} {
+            max-width: $maxWidth;
+            display: table-row;
+        }
+    }
+
+    .contact-flex__content {
+        @media #{$mq-medium} {
+            display: table-cell;
+        }
+    }
+
+    .split-width__content {
+        @media #{$mq-medium} {
+            display: table-cell;
+        }
+    }
+}

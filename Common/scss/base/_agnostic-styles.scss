@@ -1,0 +1,120 @@
+.hidden-link {
+    display: none;
+}
+
+.accent-header{
+    font-size:2rem;
+    text-align:center;
+    &:after{
+        content:" ";
+        display:block;
+        width:8rem;
+        height:3px;
+        background-color:$primary;
+        margin:.5rem auto 0 auto;
+    } 
+}
+
+.overlay-parent{
+    &:hover {
+        cursor: pointer;
+
+        & .overlay {
+            &:after {
+                background-color: rgba(0,0,0,.15);
+            }
+        }
+    }
+}
+
+.centered-background-image {
+    height: 200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-position: 50% 50%;
+
+    & h2, h3 {
+        @include vertical-align();
+        @include letter-spacing(250);
+        color: #fff;
+        text-transform: uppercase;
+        padding: 0;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        z-index: 50;
+        font-family: $serifFont;
+        width: 90%;
+
+        & .border {
+            padding: .5em;
+            border: solid 1px #fff;
+            display: inline-block;
+        }
+    }
+
+    @media #{$mq-small} {
+        height: 175px;
+        background-position: 50% 25%;
+    }
+}
+
+.overlay {
+    object-fit: contain;
+
+    &:after {
+        @include transition(background-color 300ms);
+        background-color: rgba(0,0,0,.30);
+        width: 100%;
+        height: 100%;
+        display: block;
+        content: " ";
+        top: 0;
+        position: absolute;
+    }
+
+    & h2, h3 {
+        font-size: .7em;
+    }
+
+    @media #{$mq-940} {
+
+        & h2, h3 {
+            font-size: .9em;
+        }
+    }
+}
+
+.overlay-content {
+    margin: 0 auto 1em auto !important;
+
+    & p {
+        margin: 1em auto;
+    }
+}
+
+.overlay-link {
+    & a {
+        color: $link;
+    }
+}
+
+.two-col-list{
+    margin:2rem auto;
+    padding:0;
+    list-style-type: none;
+    & li{
+        font-size:1.5rem;
+        line-height:1.7rem;
+        color:$primary;
+        margin:0;
+        padding: .25rem 1rem 1rem 2rem;
+    }
+
+    @media #{$mq-medium}
+    {
+        column-count: 2;
+        column-gap:2rem;   
+    }
+}
